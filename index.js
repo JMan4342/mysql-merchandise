@@ -29,9 +29,9 @@ app.post("/", async function (req, res) {
   try {
     const { name, category, description } = req.body;
     const [result] = await addItem(name, category, description);
-    if (result.insertedId) {
-      const [data] = await getItem(result.insertedId);
-      res.send({ success: true, result: data });
+    if (result.insertId) {
+      const [data] = await getItem(result.insertId);
+      res.send({ success: true, result: data[0] });
     } else {
       res.status(500).send({
         success: false,
