@@ -7,6 +7,8 @@ const {
   deleteItem,
 } = require("./utils/queryHelpers");
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 const genericError = "Sorry, something went wrong!";
 
